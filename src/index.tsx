@@ -6,11 +6,11 @@ import { CacheProvider } from "@emotion/react";
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-const root = ReactDOMClient.createRoot(rootElement);
+const root = rootElement && ReactDOMClient.createRoot(rootElement);
 
 const cache = createCache({ key: "css" });
 
-root.render(
+root?.render(
   <StrictMode>
     <CacheProvider value={cache}>
       <App />
